@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import Script from "next/script";
 import Providers from "./providers";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "VaporClip — Quick. Digital. Share.",
@@ -27,10 +28,7 @@ export default async function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html
-      lang="en"
-      className="h-full antialiased"
-    >
+    <html lang="en" className="h-full antialiased">
       <body
         className="min-h-full flex flex-col bg-[#f8fafc] text-[#0f172a] font-sans selection:bg-cyan-100 selection:text-cyan-900"
         suppressHydrationWarning
@@ -57,6 +55,7 @@ export default async function RootLayout({
             />
           </>
         )}
+        <SpeedInsights />
         <Providers>
           <div className="flex-1 flex flex-col">{children}</div>
         </Providers>
