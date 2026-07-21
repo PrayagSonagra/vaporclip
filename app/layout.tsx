@@ -4,6 +4,7 @@ import Script from "next/script";
 import Providers from "./providers";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "VaporClip — Quick. Digital. Share.",
@@ -55,6 +56,7 @@ export default async function RootLayout({
             />
           </>
         )}
+        <Analytics />
         <SpeedInsights />
         <Providers>
           <div className="flex-1 flex flex-col">{children}</div>
